@@ -6,7 +6,7 @@ export default function App() {
   const [padsState, setPadsState] = React.useState(pads);
 
   const buttonElements = padsState.map((pad) => {
-    return <Pad key={pad.id} color={pad.color} pad={pad} />;
+    return <Pad key={pad.id} color={pad.color} on={pad.on} />;
   });
   return (
     <main>

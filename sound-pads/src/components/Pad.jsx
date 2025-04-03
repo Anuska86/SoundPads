@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Pad = (props) => {
-  return <button style={{ backgroundColor: props.color }}></button>;
+  console.log(props.on);
+
+  return (
+    <button
+      style={{ backgroundColor: props.color }}
+      className={props.on ? "on" : undefined}
+    ></button>
+  );
 };
 
 export default Pad;
