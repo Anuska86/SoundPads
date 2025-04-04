@@ -6,11 +6,9 @@ export default function App() {
   const [padsState, setPadsState] = React.useState(pads);
 
   function toggle(id) {
-    console.log("clicked!!");
+    console.log("clicked"); 
     setPadsState((prevPads) =>
-      prevPads.map((pad) =>
-        pad.id === id ? { ...pad, on: !pad.on } : pad
-      )
+      prevPads.map((pad) => (pad.id === id ? { ...pad, on: !pad.on } : pad))
     );
   }
 
