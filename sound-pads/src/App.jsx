@@ -6,9 +6,9 @@ export default function App() {
   const [padsState, setPadsState] = React.useState(pads);
 
   function toggle(id) {
-    console.log("clicked"); 
+    console.log(id); 
     setPadsState((prevPads) =>
-      prevPads.map((pad) => (pad.id === id ? { ...pad, on: !pad.on } : pad))
+      prevPads.map((pad) => (pad.id === id ? { ...pad, on: !pad.on } : pad)) //look if the pad id is the same as the one clicked, if so, toggle the on state, if not, return the pad as is
     );
   }
 
@@ -16,6 +16,7 @@ export default function App() {
     return (
       <Pad
         key={pad.id}
+        id={pad.id}
         color={pad.color}
         on={pad.on}
         toggle={() => toggle(pad.id)}
